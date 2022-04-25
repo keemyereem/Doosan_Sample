@@ -1,0 +1,158 @@
+
+*{  max-height:1000000px; }
+
+html, body{padding:0;margin:0;}
+
+/* ����� ���θ�� ��ƮȮ�� ���� */
+body{-webkit-text-size-adjust:none; }
+
+
+body,table,input,textarea {font-size:12px; font-family: 'Montserrat','NS'; ;color:#666;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block }
+
+
+/* for AXISJ */
+body, select, input, a, button{line-height:1;}
+
+button, input, select, textarea {vertical-align:top; font-family:inherit; outline-style:none; line-height:normal;}
+button, button:focus, button:active {padding:0;}
+button {margin:0; padding:0; border:0; font:inherit; color:inherit; background:transparent; /* overflow:visible; */ /* cursor:pointer; */ line-height:1;}
+
+/* ��ũ �׵θ� ���� */
+a{outline:none;select-dummy:expression(this.hideFocus=true);}
+
+/* ������ �е��� �ʱ�ȭ */
+div, pre, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, address, dl, dt, dd, ol, ul, li, fieldset, form, legend, table, caption, tbody, tfoot, thead, tr, th, td, input, select, textarea { margin:0; padding:0; }
+
+/* ��� ��Ʈ ������ �ʱ�ȭ */
+h1, h2, h3, h4, h5, h6 {font-size:100%;font-weight:normal;}
+
+/* ����Ʈ�� ��Ÿ�� ���� */
+ul, ol, li { list-style:none; }
+em,address{font-style:normal;}
+
+/* ���̺� ��Ÿ�� �ʱ�ȭ */
+table {border-collapse:collapse;border-spacing:0;table-layout:fixed;width:100%;}
+
+table {border:0;width:100%;}
+table th{word-wrap:break-word}
+table td{word-wrap:break-word}
+
+/* �̹��� �� �ʵ�¿��� ���� ǥ�� �ʱ�ȭ */
+img, fieldset { border:none; }
+img, object { vertical-align:top; }
+img { max-width:100%; }
+
+/* ĸ�� �ؽ�Ʈ ���� �ʱ�ȭ */
+caption {text-align:left;}
+
+/* ���±��� �ʱ�ȭ */
+select {font-size:12px; vertical-align:middle;color:#666;}
+input {font-size:12px; vertical-align:middle;color:#666;}
+textarea {font-size:12px; color:#666;}
+input[type="radio"]{vertical-align:middle;}
+
+a:link{color:#666; text-decoration:none;}
+a:active{color:#666; text-decoration:none;}
+a:visited{color:#666; text-decoration:none;}
+a:hover{color:#666; text-decoration:none;}
+
+/* hidden ó�� */
+hr,caption, legend {width:0;height:0;font-size:0;line-height:0;overflow:hidden;visibility:hidden;}
+.hide{position:absolute;top:-9999px;width:0;height:0;font-size:0;line-height:0;overflow:hidden;visibility:hidden;}
+
+/* ��ŵ�׺���̼� */
+#sknavi{position:absolute;}
+#sknavi li a{position:absolute;top:-200px;}
+#sknavi li a:focus,
+#sknavi li a:active{top:1px;left:0;display:block;width:150px;color:#fff;height:18px;padding:5px 3px 0 3px;margin-left:5px;text-align:center;font-size:100%;font-weight:bold;background:#115aa3;text-decoration:none;}
+
+/* ���� */
+
+.pl0{padding-left:0px !important;}
+.pl05{padding-left:5px !important;}
+.pl10{padding-left:10px !important;}
+.pl20{padding-left:20px !important;}
+.pl30{padding-left:30px !important;}
+.pl40{padding-left:40px !important;}
+.pr05{padding-right:5px !important;}
+.pr10{padding-right:10px !important;}
+.pr20{padding-right:20px !important;}
+.pr30{padding-right:30px !important;}
+.pr40{padding-right:40px !important;}
+.pt05{padding-top:5px !important;}
+.pt10{padding-top:10px !important;}
+.pt20{padding-top:20px !important;}
+.pt30{padding-top:30px !important;}
+.pt40{padding-top:40px !important;}
+.pb05{padding-bottom:5px !important;}
+.pb10{padding-bottom:10px !important;}
+.pb20{padding-bottom:20px !important;}
+.pb30{padding-bottom:30px !important;}
+.pb40{padding-bottom:40px !important;}
+.ml0{margin-left:0 !important;}
+.ml05{margin-left:5px !important;}
+.ml10{margin-left:10px !important;}
+.ml10{margin-left:10px !important;}
+.ml20{margin-left:20px !important;}
+.ml30{margin-left:30px !important;}
+.ml40{margin-left:40px !important;}
+.mr05{margin-right:05px !important;}
+.mr10{margin-right:10px !important;}
+.mr20{margin-right:20px !important;}
+.mr30{margin-right:30px !important;}
+.mr40{margin-right:40px !important;}
+.mt05{margin-top:5px !important;}
+.mt10{margin-top:10px !important;}
+.mt20{margin-top:20px !important;}
+.mt30{margin-top:30px !important;}
+.mt40{margin-top:40px !important;}
+.mb05{margin-bottom:5px !important;}
+.mb10{margin-bottom:10px !important;}
+.mb20{margin-bottom:20px !important;}
+.mb30{margin-bottom:30px !important;}
+.mb40{margin-bottom:40px !important;}
+
+.fs11{font-size:11px;}
+.fs12{font-size:12px;}
+.fs13{font-size:13px;}
+.fs14{font-size:14px;}
+.fs15{font-size:15px;}
+.fs16{font-size:16px;}
+.fs17{font-size:17px;}
+.fs18{font-size:18px;}
+.fs19{font-size:19px;}
+.fs20{font-size:20px;}
+.fs25{font-size:25px;}
+.fs30{font-size:30px;}
+.fs35{font-size:35px;}
+.fs40{font-size:40px;}
+
+.W30{width:30px;}
+.W40{width:40px;}
+.W50{width:50px;}
+.W60{width:60px;}
+.W70{width:70px;}
+.W80{width:80px;}
+.W90{width:90px;}
+.W100{width:100px;}
+.W110{width:110px;}
+.W120{width:120px;}
+.W130{width:130px;}
+.W140{width:140px;}
+.W150{width:150px;}
+.W160{width:160px;}
+.W170{width:170px;}
+.W180{width:180px;}
+.W190{width:190px;}
+.W200{width:200px;}
+.W210{width:210px;}
+.W220{width:220px;}
+.W230{width:230px;}
+.W240{width:240px;}
+.W250{width:250px;}
+.W260{width:260px;}
+.W270{width:270px;}
+.W280{width:280px;}
+.W290{width:290px;}
+.W300{width:300px;}

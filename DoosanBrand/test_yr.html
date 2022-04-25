@@ -1,0 +1,876 @@
+
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<!--[if lt IE 9]>
+		<script src="/js/html5shiv.js"></script>
+	<![endif]-->
+
+	<title>두산위브</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes,target-densitydpi=medium-dpi"> 
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Script-Type" content="text/javascript"/>
+	<meta http-equiv="Content-Style-Type" content="text/css"/>
+	<meta property="og:image" content="/img/common/img.png" />
+
+	<!-- css block -->
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+	<!-- js block -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script src="//code.jquery.com/jquery-latest.js"></script>
+	<script src="js/jquery.rwdImageMaps.min.js"></script>
+	<script src="js/aos.js"></script>
+	<script src="js/slick.min.js"></script>
+	<script src="js/jquery.fullpage.js"></script>
+	<script src="js/test_yr.js"></script>
+	<script src="js/jquery.bxslider-rahisified.js"></script>
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<!--banner-->
+	
+</head>
+<body>
+	<script type="text/javascript">
+
+		$(function(){
+			$('img.svg').each(function () {
+				var $img = jQuery(this);
+				var imgID = $img.attr('id');
+				var imgClass = $img.attr('class');
+				var imgURL = $img.attr('src');
+				var imgTit = $img.data('tit');
+				
+				jQuery.get(imgURL, function (data) {
+					// Get the SVG tag, ignore the rest
+					var $svg = jQuery(data).find('svg');
+					// Add replaced image's ID to the new SVG
+					if (typeof imgID !== 'undefined') {
+						$svg = $svg.attr('id', imgID);
+					}
+					// Add replaced image's classes to the new SVG
+					if (typeof imgClass !== 'undefined') {
+						$svg = $svg.attr('class', imgClass + ' replaced-svg');
+					}
+					if (imgTit !== undefined){
+						$svg.find("title").text(imgTit)
+					} else{
+						$svg.find("title").remove()
+					}
+					// Remove any invalid XML tags as per http://validator.w3.org
+					$svg = $svg.removeAttr('xmlns:a');
+					// Replace image with new SVG
+					$img.replaceWith($svg);
+				}, 'xml');
+			});
+		})
+		
+		function search_form() {
+			if (searchform.s_keyword.value=='') { alert("검색어를 입력하세요."); searchform.s_keyword.focus(); return false; }
+			searchform.submit();
+		}
+	</script>
+	<header class="header">
+		<div class="header_wrap">
+			<h1 class="logo"><a href="javascript:;"></a></h1>
+			<nav class="gnb">
+				<ul>
+					<li>
+						<a href="javascript:;"><span>브랜드</span></a>
+						<!-- 
+						<ul class="sub_depth sub_depth01">
+							<li class="chk">
+								<a href="javascript:;">Depth1</a>
+								<ul class="depth3">
+									<li><a href="javascript:;">Depth2</a></li>
+									<li><a href="javascript:;">Depth2</a></li>
+									<li><a href="javascript:;">Depth2</a></li>
+								</ul>
+							</li>
+						</ul> 
+						-->
+					</li>
+					<li>
+						<a href="javascript:;"><span>분양정보</span></a>
+					</li>
+					<li>
+						<a href="javascript:;"><span>현장안내</span></a>
+					</li>
+					<li>
+						<a href="javascript:;"><span>커뮤니티</span></a>
+					</li>
+					<li>
+						<a href="javascript:;"><span>고객서비스</span></a>
+					</li>
+				</ul>
+			</nav>
+
+			<div class="header_ui">
+				<div class="icon">
+					<div class="payment">중도금 납입</div>
+					<div class="calander"></div>
+					<div class="search"></div>
+					<div class="date">분양일 <b>D- <span class="date_num">0</span></b></div>
+				</div>
+			</div>
+			<!-- <div class="search_box">
+				<form action="/sub/search/search_in.asp" name="searchform" method="post">
+					<input type="text" name="s_keyword" placeholder="검색어를 입력해 주세요.">
+					<button type="button" onclick="search_form()"><img src="img/common/icon_search.png" alt=""></button>
+				</form>
+			</div> -->	
+		</div>
+		
+	</header>
+	
+	<!--index 페이지 아닐때-->
+	<div class="wrap" id="main">
+		<div id="fullpage">
+			<section class="section mv">
+				<div class="side_nav"></div>
+				<div class="slide_wrap">
+					
+					<div class="side_nav_wrap">
+						<div class="bg">
+							<p class="on"><a href="javascript:;">We've</a></p>
+							<p><a href="javascript:;">Centi’um</a></p>
+							<p><a href="javascript:;">THE ZENITH</a></p>
+						</div>
+					</div>
+					<div class="slide_ctn">
+						<div class="item">
+							<div class="bg bg01">
+								<!-- <video id="video01" autoplay playsinline muted data-keepplaying>
+									<source src="video/main_video01.mp4" type="video/mp4">
+								</video> -->
+								<img id="video01" src="img/brand_bg1.png">
+							</div>
+						</div>
+						<div class="item">
+							<div class="bg bg02">
+								<img id="video02" src="img/brand_bg2.png">
+							</div>
+						</div>
+					</div>
+					<div class="slide_txt">
+						<div class="w1565">
+							<div class="item">
+								<h2><span>대한민국을 더 좋은 세상으로</span></h2>
+								<h2><span>만들어나가는 두산건설</span></h2>
+								<a href="javascript:;">READ MORE</a>
+							</div>
+							<div class="item">
+								<h2><span>풍부한 노하우와</span></h2>
+								<h2><span>기술을 축적해온 두산건설</span></h2>
+								<!--<p class="split plus">부가설명란</p>-->
+								<a href="javascript:;">READ MORE</a>
+							</div>
+						</div>
+					</div>
+					<div class="slide_ui">
+						<div class="w1565">
+							<div class="left_box">
+								
+								<div class="play">
+									<svg>
+										<path class="p_bg" d="M5 0 l116 0" stroke-width="10" style="fill:none; stroke: #fff; opacity: 0.3; "></path>
+										<path class="p_bar" d="M5 0 l116 0" stroke-width="10" style="fill: none; stroke: rgb(255, 255, 255); stroke-dasharray: 116; stroke-dashoffset: 116;"></path>
+									</svg>
+									<!-- <div class="icon"><i class="xi-play"></i></div> -->
+									<div class="slide_btn">
+										<div class="prev"><img src="img/slide_prev.png" alt="prev"></div>
+										<div class="next"><img src="img/slide_next.png" alt="next"></div>
+									</div>
+								</div>
+								<div class="num">
+									<p class="current">01</p>
+									<span>/</span>
+									<p class="all">03</p>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+					<div class="scroll">
+						<figure><img src="img/scrollDown.png" alt="scroll_down"></figure>
+					</div>
+				</div>
+			</section> 
+
+			<section class="section m_pro">
+				<div class="slide_wrap">
+					<div class="slide_ui">
+						<div class="slide_btn ani">
+							<div class="prev">PREV</i></div>
+							<!-- 
+							<div class="num_box">
+								<p class="current">01</p>
+								<p class="all">05</p>
+							</div> 
+							-->
+							<div class="next">NEXT</div>
+						</div>
+						<div class="slide_article ani">
+							<div class="tit on">
+								<div class="bg_txt">
+									<p>7am<span>사는 기쁨이 있는 곳.</span><br>
+										<b>:</b>
+										<b>We’ve live.</b>
+									</p>
+								</div>
+								<div class="bg_sub">
+									<p><b>”</b>
+										<span>하루의 시작,</span><br>
+										안락하고 편안한 두산위브에서<br>
+										따뜻한 햇살과 함께 하루를 시작한다.
+									</p>
+								</div>
+							</div>
+							<div class="tit">
+								<div class="bg_txt">
+									<p>9am<span>222.</span><br>
+										<b>:</b>
+										<b>We’ve Solve.</b>
+									</p>
+								</div>
+								<div class="bg_sub">
+									<p><b>”</b>
+										<span>1,</span><br>
+										11111111111111<br>
+										11111111111111
+									</p>
+								</div>
+							</div>
+							<div class="tit">
+								<div class="bg_txt">
+									<p>2pm<span>333.</span><br>
+										<b>:</b>
+										<b>We’ve Save.</b>
+									</p>
+								</div>
+								<div class="bg_sub">
+									<p><b>”</b>
+										<span>2,</span><br>
+										2222222222<br>
+										2222222222
+									</p>
+								</div>
+							</div>
+							<div class="tit">
+								<div class="bg_txt">
+									<p>5pm<span>444.</span><br>
+										<b>:</b>
+										<b>We’ve Have.</b>
+									</p>
+								</div>
+								<div class="bg_sub">
+									<p><b>”</b>
+										<span>3,</span><br>
+										333333333<br>
+										3333333333
+									</p>
+								</div>
+							</div>
+							<div class="tit">
+								<div class="bg_txt">
+									<p>9pm<span>555.</span><br>
+										<b>:</b>
+										<b>We’ve Love.</b>
+									</p>
+								</div>
+								<div class="bg_sub">
+									<p><b>”</b>
+										<span>4,</span><br>
+										44444444444444<br>
+										444444444444444444
+									</p>
+								</div>
+							</div>
+						</div>
+						
+						<div class="slide_dots ani">
+							<div class="dot on">
+								<div class="txt">
+									<p>
+										<img src="img/sec2_icon1.png" alt="sec2_icon1">
+										<span>7am</span> : We've Live
+									</p>
+								</div>	
+								<a href="javascript:;"></a>
+							</div>
+							<div class="dot">
+								<div class="txt">
+									<p>
+										<img src="img/sec2_icon2.png" alt="sec2_icon1">
+										<span>9am</span> : We’ve Solve.
+									</p>
+								</div>	
+								<a href="javascript:;"></a>
+							</div>
+							<div class="dot">
+								<div class="txt">
+									<p>
+										<img src="img/sec2_icon3.png" alt="sec2_icon1">
+										<span>2pm</span> : We’ve Save.
+									</p>
+								</div>	
+								<a href="javascript:;"></a>
+							</div>
+							<div class="dot">
+								<div class="txt">
+									<p>
+										<img src="img/sec2_icon4.png" alt="sec2_icon1">
+										<span>5pm</span> : We’ve Have.
+									</p>
+								</div>	
+								<a href="javascript:;"></a>
+							</div>
+							<div class="dot">
+								<div class="txt">
+									<p>
+										<img src="img/sec2_icon5.png" alt="sec2_icon1">
+										<span>9pm</span> : We’ve Love.
+									</p>
+								</div>	
+								<a href="javascript:;"></a>
+							</div>
+						</div>
+						<div class="slide_ctn ani">
+							<div class="item">
+								<div class="bg bg01"></div>
+							</div>
+							<div class="item">
+								<div class="bg bg02"></div>
+							</div>
+							<div class="item">
+								<div class="bg bg03"></div>
+							</div>
+							<div class="item">
+								<div class="bg bg04"></div>
+							</div>
+							<div class="item">
+								<div class="bg bg05"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="slider-progress">
+					<div class="progress"></div>
+				</div>
+			</section>
+
+			<section class="section m-pro2">
+				<div class="swiper mySwiper">
+					<div class="swiper-wrapper">
+					  <div class="swiper-slide">
+						<div class="side_txt">
+							<p>창원 두산위브 더 센트럴</p>
+							<p>명품 브랜드의 프리미엄 특권<span></span></p>
+						</div>
+						<div class="wrap">
+							<img src="img/sec3_img1.png" alt="sec3_img1">
+							<div class="icons">
+								<div class="icons_ing" style="background:#00ad7f;">분양<br>예정</div>
+								<div class="icons_like" style="background:#fff;">
+									<img class="on" src="img/sec3_like.png" alt="sec3_like">
+									<img class="" src="img/sec3_like_on.png" alt="sec3_like_on">
+								</div>
+							</div>
+							<div class="detail">
+								<h2>두산위브 광주센트럴파크</h2>
+								<p>
+									<span>공급시기</span>2022.04.20<br>
+									<span>위치</span>경기도 광주시 탄벌동 437-1번지 일원<br>
+									<span>세대수</span>총 693세대 중 일반분양 653세대<br>
+									<span>공급문의</span>031.766.9998<br>
+								</p>
+								<a href="javascript:;">분양홈페이지 바로가기</a>
+							</div>
+						</div>
+						<a href="javascript:;">READ MORE</a>
+					  </div>
+					  <div class="swiper-slide">
+						<div class="side_txt">
+							<p>두산위브 광주센트럴파크</p>
+							<p>마산의 센트럴 라이프<span></span></p>
+						</div>
+						<div class="wrap">
+							<img src="img/sec3_img2.png" alt="sec3_img2">
+							<div class="icons">
+								<div class="icons_ing" style="background:#034ea2;">분양중</div>
+								<div class="icons_like" style="background:#fff;">
+									<img class="on" src="img/sec3_like.png" alt="sec3_like">
+									<img class="" src="img/sec3_like_on.png" alt="sec3_like_on">
+								</div>
+							</div>
+							<div class="detail">
+								<h2>두산위브 광주센트럴파크</h2>
+								<p>
+									<span>공급시기</span>2022.04.20<br>
+									<span>위치</span>경기도 광주시 탄벌동 437-1번지 일원<br>
+									<span>세대수</span>총 693세대 중 일반분양 653세대<br>
+									<span>공급문의</span>031.766.9998<br>
+								</p>
+								<a href="javascript:;">분양홈페이지 바로가기</a>
+							</div>
+						</div>
+						<a href="javascript:;">READ MORE</a>
+					  </div>
+					  <div class="swiper-slide">
+						<div class="side_txt">
+							<p>반월역 두산위브 더 센트럴</p>
+							<p>3기 신도시 프리미엄 완성<span></span></p>
+						</div>
+						<div class="wrap">
+							<img src="img/sec3_img3.png" alt="sec3_img3">
+							<div class="icons">
+								<div class="icons_ing" style="background:#aaaaaa;">분양<br>완료</div>
+								<div class="icons_like" style="background:#fff;">
+									<img class="on" src="img/sec3_like.png" alt="sec3_like">
+									<img class="" src="img/sec3_like_on.png" alt="sec3_like_on">
+								</div>
+							</div>
+							<div class="detail">
+								<h2>두산위브 광주센트럴파크</h2>
+								<p>
+									<span>공급시기</span>2022.04.20<br>
+									<span>위치</span>경기도 광주시 탄벌동 437-1번지 일원<br>
+									<span>세대수</span>총 693세대 중 일반분양 653세대<br>
+									<span>공급문의</span>031.766.9998<br>
+								</p>
+								<a href="javascript:;">분양홈페이지 바로가기</a>
+							</div>
+						</div>
+						<a href="javascript:;">READ MORE</a>
+					  </div>
+					  <div class="swiper-slide">
+						<div class="side_txt">
+							<p>두산위브 광주센트럴파크</p>
+							<p>마산의 센트럴 라이프<span></span></p>
+						</div>
+						<div class="wrap">
+							<img src="img/sec3_img4.png" alt="sec3_img4">
+							<div class="icons">
+								<div class="icons_ing" style="background:#034ea2;">분양중</div>
+								<div class="icons_like" style="background:#fff;">
+									<img class="on" src="img/sec3_like.png" alt="sec3_like">
+									<img class="" src="img/sec3_like_on.png" alt="sec3_like_on">
+								</div>
+							</div>
+							<div class="detail">
+								<h2>두산위브 광주센트럴파크</h2>
+								<p>
+									<span>공급시기</span>2022.04.20<br>
+									<span>위치</span>경기도 광주시 탄벌동 437-1번지 일원<br>
+									<span>세대수</span>총 693세대 중 일반분양 653세대<br>
+									<span>공급문의</span>031.766.9998<br>
+								</p>
+								<a href="javascript:;">분양홈페이지 바로가기</a>
+							</div>
+						</div>
+						<a href="javascript:;">READ MORE</a>
+					</div>
+				</div>
+				</div>
+			</section>
+
+			<div class="section m-pro3" st>
+				<div class="w1446">
+					<div class="top">
+						<h1 class="s_tit">BRAND STORY</h1>
+						<p class="sub_txt">
+							두산위브는 모든 것을 다 가진 주거공간, 현대인들이 가지고 싶고, 살고 싶은 주거공간입니다.<br>
+							위브는 삶에 대한 사랑을 키워가는 공간이며(We live), 생활의 알뜰함이 돋보이도록 설계되었으며(We save),<br>
+							모든 니즈가 해결되는(We solve) 안락하고 편리한 공간을 의미합니다.
+						</p>
+				   </div> 
+				</div>
+				<div class="slide_wrap">
+					<div class="slide_ui">
+						<div class="slide_ctn ani">
+							<div class="item">
+								<div class="bg bg01"></div>
+							</div>
+							<div class="item">
+								<div class="bg bg02"></div>
+							</div>
+							<div class="item">
+								<div class="bg bg03"></div>
+							</div>
+						</div>
+
+						<div class="slide_txt">
+							
+							<div class="slide_dots ani">
+								<div class="dot on">We’ve</div>
+								<div class="dot">Centi’um</div>
+								<div class="dot">THE ZENITH</div>
+							</div>
+							<div class="sub_txt ani">
+								
+								<p class="txt on">
+									<span>We’ve</span><br>
+									두산건설은 편리하고 쾌적한 생활을 영위할 수 있는<br>
+									주거공간을 창조 삶을 더욱 풍요롭게 만들고자 하는 철학을 기반으로<br>
+									고품격 주거문화의 새로운 장을 열어가고 있습니다.
+								</p>
+								<p class="txt">
+									<span>Centi’um</span><br>
+									한 차원 높은 기술력에 창조적인 사고와 깊이 있는<br>
+									안목을 더해 보다 가치 있는 공간을 창조합니다.<br>
+									도시의 스카이라인과 지역경관을 바꾸는 독창적인 스타일로<br>
+								</p>
+								<p class="txt">
+									<span>THE ZENITH</span><br>
+									안전하고 편리하게 이용할 수 있는 인프라를 구축하고자<br>
+									토목 대역사를 통해 환경·에너지로 사업영역을 확장하며<br>
+									미래의 지도를 그리고 있습니다.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="bg_blue">
+					<div>
+						<h1><img src="img/sec4_bottom_icon1.png" alt="sec4_bottom_icon1"></h1>
+						<h4>Search</h4>
+						<p>
+							두산위브와 함께한 최고의 주거공간을<br>
+							검색해 보실 수 있습니다.
+						</p>
+					</div>
+					<div>
+						<h1><img src="img/sec4_bottom_icon2.png" alt="sec4_bottom_icon1"></h1>
+						<h4>Performance</h4>
+						<p>
+							We’ve의 가치는 디자인, 문화, 안전<br>
+							모든 분야에서 인정받고 있습니다.
+						</p>
+					</div>
+					<div>
+						<h1><img src="img/sec4_bottom_icon3.png" alt="sec4_bottom_icon1"></h1>
+						<h4>Gallery</h4>
+						<p>
+							남다른 감감으로 표현한 두산위브만의<br>
+							명품 주거문화를 확인하실 수 있습니다.
+						</p>
+					</div>
+					<div>
+						<h1><img src="img/sec4_bottom_icon4.png" alt="sec4_bottom_icon1"></h1>
+						<h4>Video</h4>
+						<p>
+							최초의 생각으로 새로운 세상을 만드는<br>
+							두산위브 영상을 확인하실 수 있습니다.
+						</p>
+					</div>
+				</div>
+			<!-- </div> -->
+			</div>
+
+			<!-- 캘린더 -->
+			<section class="section calendar">
+				<div class="w1446">
+					<div class="top">
+						<h1 class="s_tit">We CALENDAR</h1>
+						<p class="sub_txt">캘린더를 통해 분양정보를 안내해 드립니다.<br>
+						   상세정보를 확인하시려면 해당 프로젝트를 클릭해 주세요.</p>
+						<div class="btn"><a href="javascript:;">캘린더로 확인하기</a></div>
+				   </div> 
+				</div>
+				<div class="slider_wrap">
+					<div class="item">
+						<div class="date">
+							<span class="num">04</span>
+							<span class="eng"><img src="img/april.png" alt="april"></span>
+						</div>
+						<div class="tit">
+							울산 문수로<br>
+							두산위브더제니스
+						</div>
+						<p class="txt">울산 최고의<br>
+							자부심을 짓습니다.</p>
+						<a href="javascript:;" class="read_more">READ MORE</a>
+						<div class="tag">입주<br> 예정</div>
+					</div>
+					<div class="item">
+						<div class="date">
+							<span class="num">05</span>
+							<span class="eng"><img src="img/may.png" alt="may"></span>
+						</div>
+						<div class="tit">울진역 센트럴<br>
+							두산위브</div>
+						<p class="txt">울진 최대 규모 & 초역세권<br>
+							프리미엄 브랜드 아파트</p>
+						<a href="javascript:;" class="read_more">READ MORE</a>
+						<div class="tag grn">분양<br> 예정</div>
+					</div>
+					<div class="item">
+						<div class="date">
+							<span class="num">07</span>
+							<span class="eng"><img src="img/july.png" alt="july"></span>
+						</div>
+						<div class="tit">안양예술공원<br>
+							두산위브</div>
+						<p class="txt">서울 서남부권 교통의 요충지,<br>
+							서울 앞 프리미엄 라이프!</p>
+						<a href="javascript:;" class="read_more">READ MORE</a>
+						<div class="tag">입주<br> 예정</div>
+					</div>
+					<div class="item">
+						<div class="date">
+							<span class="num">04</span>
+							<span class="eng"><img src="img/april.png" alt="april"></span>
+						</div>
+						<div class="tit">
+							울산 문수로<br>
+							두산위브더제니스
+						</div>
+						<p class="txt">울산 최고의<br>
+							자부심을 짓습니다.</p>
+						<a href="javascript:;" class="read_more">READ MORE</a>
+						<div class="tag">입주<br> 예정</div>
+					</div>
+					<div class="item">
+						<div class="date">
+							<span class="num">05</span>
+							<span class="eng"><img src="img/may.png" alt=""></span>
+						</div>
+						<div class="tit">의정부역<br>
+							센트럴자이&위브캐슬</div>
+						<p class="txt">GTX(예정) · 브랜드 · 대단지로<br>
+							완성되는 No.1 라이프</p>
+						<a href="javascript:;" class="read_more">READ MORE</a>
+						<div class="tag grn">분양<br> 예정</div>
+					</div>
+					<div class="item">
+						<div class="date">
+							<span class="num">07</span>
+							<span class="eng"><img src="img/july.png" alt="july"></span>
+						</div>
+						<div class="tit">안양예술공원<br>
+							두산위브</div>
+						<p class="txt">서울 서남부권 교통의 요충지,<br>
+							서울 앞 프리미엄 라이프!</p>
+						<a href="javascript:;" class="read_more">READ MORE</a>
+						<div class="tag">입주<br> 예정</div>
+					</div>
+				</div>
+				<div class="nav_bar">
+					<div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+				</div>				
+			</section>
+			<!-- COMMUNITY -->
+			<section class="section community">
+				<div class="left">
+					<h1 class="s_tit">COMMUNITY</h1>
+					<p class="sub_txt">
+						두산건설의 주거문화 브랜드,<br>
+						두산위브와 우리 수상실적을 소개합니다.						
+					</p>
+					<ul class="tab">
+						<li>
+							<div class="icon"></div>
+							<div class="tab_tit">NEWS</div>
+						</li>
+						<li>
+							<div class="icon"></div>
+							<div class="tab_tit">MAGAZINE</div>
+						</li>
+						<li>
+							<div class="icon"></div>
+							<div class="tab_tit">SMS</div>
+						</li>
+						<li>
+							<div class="icon"></div>
+							<div class="tab_tit">YOUTUBE</div>
+						</li>
+					</ul>
+					<div class="btn"><a href="javascript:;" class="read_more">READ MORE</a></div>
+				</div>
+				<div class="right">
+					<div class="vertical_slider">
+						<div class="item item01">
+							<div class="img"></div>
+							<div class="desc">
+								<div class="tit">두산건설, 울진 읍남 공동주택 신축사업 수주</div>
+								<div class="txt">
+									두산건설 건축사업본부는 ‘울진 읍남 공동주택 신축공사’를 수주했다고 밝혔다.<br>
+									경북 울진군 울진읍 읍남리 산 53-2번지 일원에 건립될 본 이 프로젝트는<br>
+									지하 2층~지상 20층, 8개동 393세대 및 부대복리시설을 건립하는 사업으로 ...
+								</div>
+								<div class="bot">
+									<a href="javascript:;" class="read_more">READ MORE</a>
+									<span class="date">2022.04.17</span>
+								</div>
+							</div>
+						</div>
+						<div class="item item02">
+							<div class="img"></div>
+							<div class="desc">
+								<div class="tit">두산건설, ‘용인시 동백동 지역주택조합아파트<br>
+									신축사업’을 수주</div>
+								<div class="txt">
+									용인시 동백동 지역주택조합사업은 2022년 5월 착공 예정이며,<br>
+									준공은 32개월 후인 2025년 1월 예정이다.
+								</div>
+								<div class="bot">
+									<a href="javascript:;" class="read_more">READ MORE</a>
+									<span class="date">2021.12.06</span>
+								</div>
+							</div>
+						</div>
+						<div class="item item03">
+							<div class="img"></div>
+							<div class="desc">
+								<div class="tit">두산건설, 울진 읍남 공동주택 신축사업 수주</div>
+								<div class="txt">
+									두산건설 건축사업본부는 ‘울진 읍남 공동주택 신축공사’를 수주했다고 밝혔다.<br>
+									경북 울진군 울진읍 읍남리 산 53-2번지 일원에 건립될 본 이 프로젝트는<br>
+									지하 2층~지상 20층, 8개동 393세대 및 부대복리시설을 건립하는 사업으로 ...
+								</div>
+								<div class="bot">
+									<a href="javascript:;" class="read_more">READ MORE</a>
+									<span class="date">2022.04.17</span>
+								</div>
+							</div>
+						</div>
+						<div class="item item04">
+							<div class="img"></div>
+							<div class="desc">
+								<div class="tit">두산건설, ‘용인시 동백동 지역주택조합아파트<br>
+									신축사업’을 수주</div>
+								<div class="txt">
+									용인시 동백동 지역주택조합사업은 2022년 5월 착공 예정이며,<br>
+									준공은 32개월 후인 2025년 1월 예정이다.
+								</div>
+								<div class="bot">
+									<a href="javascript:;" class="read_more">READ MORE</a>
+									<span class="date">2021.12.06</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- CUSTOMER SERVICE -->
+			<section class="section cs">
+				<div class="w1200">
+					<h1 class="s_tit">CUSTOMER SERVICE</h1>
+					<p class="sub_txt">
+						남다른 감각이 돋보이는 주거공간,<br>
+						두산위브는  고객 중심 주택문화를 실현하기 위해 노력합니다.
+					</p>
+				</div>
+				<div class="cont">
+					<div class="scroll_wrap swiper mySwiper2">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide item item01">
+								<div class="tit">
+									분양 예정<br>
+									고객님이시라면?
+								</div>
+								<ul>
+									<li><a href="javascript:;">분양일정 확인하기</a></li>
+									<li><a href="javascript:;">신규분양 확인하기</a></li>
+								</ul>
+							</div>
+							<div class="swiper-slide item item02">
+								<div class="tit">
+									계약중인<br>
+									고객님이시라면?
+								</div>
+								<ul>
+									<li><a href="javascript:;">계약정보조회</a></li>
+									<li><a href="javascript:;">중도금 납부조회</a></li>
+									<li><a href="javascript:;">입주자 사전점검 방문 예약하기</a></li>
+								</ul>
+							</div>
+							<div class="swiper-slide item item03">
+								<div class="tit">
+									입주 진행중인<br>
+									고객님이시라면?
+								</div>
+								<ul>
+									<li><a href="javascript:;">입주 단지 안내</a></li>
+									<li><a href="javascript:;">입주가이드</a></li>
+									<li><a href="javascript:;">입주일 예약 바로가기</a></li>
+								</ul>
+							</div>
+							<div class="swiper-slide item item04">
+								<div class="tit">
+									자주하는 질문이<br>
+									궁금하시다면?
+								</div>
+								<ul>
+									<li><a href="javascript:;">FAQ</a></li>
+									<li><a href="javascript:;">AS신청</a></li>
+									<li><a href="javascript:;">고객문의</a></li>
+								</ul>
+							</div>
+							<!-- <div class="swiper-slide item item05">
+								<div class="tit">
+									분양 예정<br>
+									고객님이시라면?
+								</div>
+								<ul>
+									<li><a href="javascript:;">분양일정 확인하기</a></li>
+									<li><a href="javascript:;">신규분양 확인하기</a></li>
+								</ul>
+							</div>
+							<div class="swiper-slide item item06">
+								<div class="tit">
+									계약중인<br>
+									고객님이시라면?
+								</div>
+								<ul>
+									<li><a href="javascript:;">계약정보조회</a></li>
+									<li><a href="javascript:;">중도금 납부조회</a></li>
+									<li><a href="javascript:;">입주자 사전점검 방문 예약하기</a></li>
+								</ul>
+							</div>
+							<div class="swiper-slide item item07">
+								<div class="tit">
+									입주 진행중인<br>
+									고객님이시라면?
+								</div>
+								<ul>
+									<li><a href="javascript:;">입주 단지 안내</a></li>
+									<li><a href="javascript:;">입주가이드</a></li>
+									<li><a href="javascript:;">입주일 예약 바로가기</a></li>
+								</ul>
+							</div>
+							<div class="swiper-slide item item08">
+								<div class="tit">
+									자주하는 질문이<br>
+									궁금하시다면?
+								</div>
+								<ul>
+									<li><a href="javascript:;">FAQ</a></li>
+									<li><a href="javascript:;">AS신청</a></li>
+									<li><a href="javascript:;">고객문의</a></li>
+								</ul>
+							</div> -->
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- 여기부터 푸터 -->
+			
+			<footer class="footer section fp-auto-height">
+				<img src="img/footer.png">
+
+			</footer>
+
+		</div><!-- 풀페이지 div & subWrap div  -->
+	</div>
+
+</body>
+</html>
