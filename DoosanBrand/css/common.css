@@ -18,7 +18,7 @@ body *{line-height:1.2em; word-break:keep-all; box-sizing: border-box; }
 .header .header_wrap .gnb > ul > li {display:inline-block; vertical-align: top; position: relative;}
 .header .header_wrap .gnb > ul > li > a{display:inline-block; vertical-align: top; font-weight:300; font-size:18px; color: #fff; padding:0 40px; }
 .header .header_wrap .gnb > ul > li > a > span{position:relative; display:inline-block; vertical-align: top; line-height:50px}
-.header .header_wrap .gnb > ul > li > a > span::after{content:""; position:absolute; bottom: 0; left: -10%; width: 0; height: 3px; background: #e30000; transition:0.4s}
+.header .header_wrap .gnb > ul > li > a > span::after{content:""; position:absolute; bottom: 0; left: -10%; width: 0; height: 3px; background: #034ea2; transition:0.4s}
 .header .header_wrap .gnb > ul > li > ul { position:absolute; overflow: hidden; top: 100px; left: 0; width: 100%; max-height: 0; background: #fff; box-shadow:0px 20px 17px -12px #00000021; }
 .header .header_wrap .gnb > ul > li > ul.on { max-height: 500px; border-top: 1px solid #dadada; }
 .header .header_wrap .gnb > ul > li > ul > li{display:inline-block; vertical-align: top;}
@@ -30,7 +30,7 @@ body *{line-height:1.2em; word-break:keep-all; box-sizing: border-box; }
 .header .header_wrap .gnb > ul > li > ul > li > .depth3 > li:last-of-type a{padding-bottom:20px;}
 .header .header_wrap .gnb > ul > li > ul > li:hover > a,
 .header .header_wrap .gnb > ul > li > ul > li > .depth3 > li > a:hover,
-.header .header_wrap .gnb > ul > li:hover > a{color: #e50012;}
+.header .header_wrap .gnb > ul > li:hover > a{color: #034ea2;}
 .header .header_wrap .gnb > ul > li:hover > a > span::after{width: 120%;}
 .header .header_wrap .gnb > ul > li > ul > li > .depth3 > li > a:hover{background-size:100% 1px; }
 

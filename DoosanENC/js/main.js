@@ -25,12 +25,9 @@ $(function(){
 		if (checkVisible($('.sub01 #content .section1'))&&!isVisible) {
 			$('.sub01 .content').addClass('a_on');
 			$('.section1').addClass('a_on');
-			isVisible=true;
-		}
-		else if(checkVisible($('.sub01 #content .section2'))&&!isVisible){
-			console.log();
+		} else if(checkVisible($('.sub01 #content .section2'))&&!isVisible){
 			$('.section2').addClass('a_on');
-			isVisible=true;
+			
 		}
 	});
 	
