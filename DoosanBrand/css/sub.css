@@ -20,6 +20,7 @@
 .sub_visual.a_on .vis_tag {opacity: 1;animation: subfadeUp .8s .6s;}
 .sub_visual.a_on .sub_txt {opacity: 1;animation: subfadeUp .8s .6s;}
 
+
 /*  */
 #sub .section {position: relative;}
 #sub .section:after {content:'';display: block;width: 100vw;height: 100vh;background-repeat: no-repeat;background-size: cover;background-position: 50% 50%;position: absolute;top: 0;left: 0;z-index: -1;}

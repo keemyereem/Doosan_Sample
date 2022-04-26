@@ -1,3 +1,8 @@
+
+
+
+
+
 $(function(){
 	//********************************** AOS initialization
     AOS.init({
@@ -9,38 +14,40 @@ $(function(){
 	/* ----------sub ----------------- */
 
 
-	var isVisible = false;
-
-	$(window).on('scroll',function() {
+	// var isVisible = false;
+	
+	$(window).on('scroll', function() {
 		/* header */
 		const st = $(window).scrollTop();
 		if (st>=100){
 			$('.header').addClass('on'); 
-
 		} else{
 			$('.header').removeClass('on');
 		}
-
-
-		if (checkVisible($('.sub01 #content .section1'))&&!isVisible) {
-			$('.sub01 .content').addClass('a_on');
-			$('.section1').addClass('a_on');
-		} else if(checkVisible($('.sub01 #content .section2'))&&!isVisible){
-			$('.section2').addClass('a_on');
-			
-		}
-	});
-	
-	function checkVisible( elm, eval ) {
-		eval = eval || "object visible";
-		var viewportHeight = $(window).height() - Number(400), // Viewport Height
-			scrolltop = $(window).scrollTop(), // Scroll Top
-			y = $(elm).offset().top,
-			elementHeight = $(elm).height();   
 		
-		if (eval == "object visible") return ((y < (viewportHeight + scrolltop)) && (y > (scrolltop - elementHeight)));
-		if (eval == "above") return ((y < (viewportHeight + scrolltop)));
-	}
+		/* sub01 */
+		// if (checkVisible($('.sub01 #content .section1'))&&!isVisible) {
+		// 	$('.sub01 .content').addClass('a_on');
+		// 	$('.section1').addClass('a_on');
+		// } else if(checkVisible($('.sub01 #content .section2'))&&!isVisible){
+		// 	$('.section2').addClass('a_on');
+		// }
+
+	});
+
+
+
+	
+	// function checkVisible( elm, eval ) {
+	// 	eval = eval || "object visible";
+	// 	var viewportHeight = $(window).height() - Number(400), // Viewport Height
+	// 		scrolltop = $(window).scrollTop(), // Scroll Top
+	// 		y = $(elm).offset().top,
+	// 		elementHeight = $(elm).height();   
+		
+	// 	if (eval == "object visible") return ((y < (viewportHeight + scrolltop)) && (y > (scrolltop - elementHeight)));
+	// 	if (eval == "above") return ((y < (viewportHeight + scrolltop)));
+	// }
 
 
 
@@ -526,6 +533,27 @@ $(function(){
 
 })
 
+// $(window).scroll(function(){
+// 	var wst = $(window).scrollTop();
+// 	detailScroll();
+// });
+
+// function detailScroll(){
+// 	var detail_s1 = $('.detail .section1').offset().top - 600 ;
+// 	var detail_s2 = $('.detail .section2').offset().top - 600 ;
+// 	var detail_s3 = $('.detail .section3').offset().top - 600 ;
+// 	console.log('wst = ' + st);
+// 	console.log('s1 = ' + detail_s1);
+// 	console.log('s2 = ' + detail_s2);
+// 	console.log('s3 = ' + detail_s3);
+// 	if (wst > detail_s1) {
+// 		$('.detail .section1').addClass('a_on');
+// 	} else if (wst > detail_s2 ){
+// 		$('.detail .section2').addClass('a_on');
+// 	} else if (wst > detail_s3){
+// 		$('.detail .section3').addClass('a_on');
+// 	}
+// };
 
 // scrollMotion();
 // function scrollMotion(){
