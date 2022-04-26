@@ -279,7 +279,7 @@ $(function(){
 		$(".m_pro .slide_dots .dot").eq(nextSlide).addClass("on")
 		$(".m_pro .sub_txt .txt").removeClass("on")
 		$(".m_pro .sub_txt .txt").eq(nextSlide).addClass("on")
-		$(".num_box .current").text("0" + (nextSlide + 1))	
+		$(".num_box .current").text("0" + (nextSlide + 1))
 	})
 
 	$(".m_pro .slide_wrap .slide_ui .slide_dots .dot").hover(function(){
