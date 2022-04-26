@@ -1,8 +1,4 @@
 
-
-
-
-
 $(function(){
 	//********************************** AOS initialization
     AOS.init({
@@ -25,31 +21,8 @@ $(function(){
 			$('.header').removeClass('on');
 		}
 		
-		/* sub01 */
-		// if (checkVisible($('.sub01 #content .section1'))&&!isVisible) {
-		// 	$('.sub01 .content').addClass('a_on');
-		// 	$('.section1').addClass('a_on');
-		// } else if(checkVisible($('.sub01 #content .section2'))&&!isVisible){
-		// 	$('.section2').addClass('a_on');
-		// }
 
 	});
-
-
-
-	
-	// function checkVisible( elm, eval ) {
-	// 	eval = eval || "object visible";
-	// 	var viewportHeight = $(window).height() - Number(400), // Viewport Height
-	// 		scrolltop = $(window).scrollTop(), // Scroll Top
-	// 		y = $(elm).offset().top,
-	// 		elementHeight = $(elm).height();   
-		
-	// 	if (eval == "object visible") return ((y < (viewportHeight + scrolltop)) && (y > (scrolltop - elementHeight)));
-	// 	if (eval == "above") return ((y < (viewportHeight + scrolltop)));
-	// }
-
-
 
 	//********************************** 메인 슬라이더
 	var speed = 1400;
@@ -175,31 +148,9 @@ $(function(){
 		var count = slick.slideCount;
 		var selectors = [nextSlide, nextSlide - count, nextSlide + count].map(function(n){
 		return '.mv [data-slick-index="'+n+'"]'
-		//한페이지에서 여러개 사용시 return '.부모클래스 [data-slick-index="'+n+'"]'
 		}).join(',');
 		$('.mv .slick_now').removeClass('slick_now');
-		//한페이지에서 여러개 사용시  $('.부모 클래스 .slick_now').removeClass('slick_now');
 		$(selectors).addClass('slick_now');
-		/*$(this).find(".slick-slide .bg0" + nextSlide).css({
-			'transform': 'translateX(' + (w * -1) + 'px)'
-		})
-		$(this).find(".slick-slide .bg0" + (nextSlide + 1)).css({
-			'transform': 'translateX(0px)'
-		})
-		$(this).find(".slick-slide .bg0" + (nextSlide + 2)).css({
-			'transform': 'translateX(' + w + 'px)'
-		})
-		if (nextSlide + 1 == slick.slideCount) {
-			$(this).find(".slick-slide .bg01").css({
-				'transform': 'translateX(' + w + 'px)'
-			})
-		}
-		if (nextSlide == 0) {
-			var last = slick.$slides.length
-			$(this).find(".slick-slide .bg0"+last+"").css({
-				'transform': 'translateX(' + (w * -1) + 'px)'
-			})
-		}*/
 		$(".play .p_bar").stop().animate({strokeDashoffset: "140"},0)
 		$(".mv .current").text("0" + (nextSlide + 1))
 
