@@ -4,7 +4,7 @@
 .w1600{width: 100%; max-width:1600px; box-sizing:border-box; margin: 0 auto;}
 .w1557{width: 100%; max-width:1557px; box-sizing:border-box; margin: 0 auto;}
 .w1400{width: 100%; max-width:1400px; box-sizing:border-box; margin: 0 auto;}
-body *{line-height:1.2em; word-break:keep-all; box-sizing: border-box; }
+body *{line-height:1.2em; word-break:keep-all; box-sizing: border-box;font-family: 'NS';font-weight: 200;}
 /* section {padding-top: 100px;} */
 
 

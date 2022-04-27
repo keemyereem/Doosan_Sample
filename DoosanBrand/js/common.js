@@ -3,17 +3,20 @@
 
 $(function(){
 	  
-	//********************************** AOS initialization
+	// AOS initialization **********************************************************************************************************************************************************************
+
     AOS.init({
 		once : true,
 		throttleDelay : 99,
 		duration: 1000,
 	});
 	
-	$(".side_nav").on("click", function(){
-		$(".side_nav_wrap .bg").toggleClass("on");
-	});
+	// $(".side_nav").on("click", function(){
+	// 	$(".side_nav_wrap .bg").toggleClass("on");
+	// });
 	
+
+	// **********************************************************************************************************************************************************************
 
     function getParameter(name) {
         name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -29,48 +32,74 @@ $(function(){
     };
 
 
-	//********************************** 메인 슬라이더
-	var speed = 1400;
-	var autoplaySpeed = 3000; 
-	var slideWidth  = $(window).width();
-	var w = slideWidth / 1.2 * -1;
-	var mvSlide = $(".mv .slide_ctn");
-	var mtSlide = $(".mv .slide_txt .w1565");
+	// 풀페이지 부수기 (커스텀 앵커시) **********************************************************************************************************************************************************
 
-	//풀페이지 부수기 (커스텀 앵커시)
 	var fullPageCreated = false;
 	var resizeControl = false;
 	createFullpage();
 	fullResize();
 	
 	function createFullpage() {
-		 if (fullPageCreated === false) {
-			 fullPageCreated = true;
-			 $("#main #fullpage").fullpage({
-				scrollOverflow: true,
-				fitToSection: false,
-				onLeave: function(index, nextIndex, direction){
-					var idx = nextIndex - 1;
-					$("#main .section:eq("+idx+")").addClass("a_on");
+		if (fullPageCreated === false) {
+			fullPageCreated = true;
+			$("#main #fullpage").fullpage({
+			   scrollOverflow: true,
+			   fitToSection: false,
+			   onLeave: function(index, nextIndex, direction){
+				   var idx = nextIndex - 1;
+				   $("#main .section:eq("+idx+")").addClass("a_on");
 
-					if(nextIndex == 2){
-					}
-					if(nextIndex == 4){
-						// $.fn.fullpage.destroy();
-						$('header').hide();
-					} else { 
-						$('header').show();
-					}
-					if(nextIndex == 5){
+				   if(nextIndex == 3 || nextIndex == 6){
+						$('header').addClass('bg');
+				   } else {
+						$('header').removeClass('bg');
+				   }
+				   
+				   if(nextIndex == 4){
+					   $('header').hide();
+				   } else { 
+					   $('header').show();
+				   }
+			   },
+			   
+			   
+		   })
+	   }
+   }
+	// function createFullpage() {
+	// 	 if (fullPageCreated === false) {
+	// 		 fullPageCreated = true;
+	// 		 $("#main #fullpage").fullpage({
+	// 			scrollOverflow: true,
+	// 			fitToSection: false,
+	// 			onLeave: function(index, nextIndex, direction){
+	// 				var idx = nextIndex - 1;
+	// 				$("#main .section:eq("+idx+")").addClass("a_on");
+
+	// 				if(nextIndex !== 1){
+	// 					$('.header').addClass('wide');
+	// 				} else {
+	// 					$('.header').removeClass('wide');
+	// 				}
+	// 				if (nextIndex == 2) {
 						
-						
-					}
-				},
+	// 				}
+	// 				if(nextIndex == 3 || nextIndex == 4 || nextIndex == 6){
+	// 					$('.header').addClass('bg');
+	// 				} else {
+	// 					$('.header').removeClass('bg');
+	// 				}
+	// 				if(nextIndex == 4){
+	// 					$(".m-pro3 .slide_ctn").slick("slickPlay");
+	// 				} else { 
+	// 					$(".m-pro3 .slide_ctn").slick("slickPause");
+	// 				}
+	// 			},
 				
 				
-			})
-		}
-	}
+	// 		})
+	// 	}
+	// }
 
 
 	var control02 = true;
@@ -107,10 +136,8 @@ $(function(){
 		}
 
 
-
-
-
-	//********************************** 메인 슬라이더
+	// 메인 슬라이더 *****************************************************************************************************************************************************************
+	
 	var speed = 1400;
 	var autoplaySpeed = 5000; 
 	var slideWidth  = $(window).width();
@@ -153,7 +180,7 @@ $(function(){
 		$('.mv .slick_now').removeClass('slick_now');
 		//한페이지에서 여러개 사용시  $('.부모 클래스 .slick_now').removeClass('slick_now');
 		$(selectors).addClass('slick_now');
-		$(".play .p_bar").stop().animate({strokeDashoffset: "140"},0)
+		$(".play .p_bar").stop().animate({strokeDashoffset: "116"},0)
 		$(".mv .current").text("0" + (nextSlide + 1))
 
 		var bgEle = $(this).find(".item").not(".slick-cloned").find(".bg0" + (nextSlide + 1))
@@ -184,7 +211,25 @@ $(function(){
 		}
 	}
 
-
+	$(".mv .slide_wrap .slide_txt .item p").each(function(){
+		console.log($(this))
+		$(this).find("span").each(function(i){
+			var i = i / 20
+			$(this).css("animation-delay", i+"s")
+		})
+	})
+	$(".split").each(function(){
+		var text = this;
+		text.innerHTML = text.textContent.replace(/\S/g, "<span>$&</span>");
+		$(this).find("span").each(function(i){
+			var i = i / 25
+			$(this).css("animation-delay", (i + 0.3)+"s")
+			if($(this).parent().hasClass("plus")){
+				$(this).css("animation-delay", (i + 1.5)+"s")
+			}
+		})
+		
+	})
 
 	$(".slide_btn > div").on("click", function(e){
 		var name = e.currentTarget.className
@@ -194,7 +239,10 @@ $(function(){
 			$(this).parents().siblings(".slide_ctn").slick("slickNext")
 		}
 	})
-
+	$(".side_nav_wrap .bg a").on("click", function(e){
+		var idx = $(this).parent().index();
+		$(this).parents().siblings(".slide_ctn").slick('slickGoTo', idx);
+	})
 
  /* section2 */
 	$(".m_pro .slide_ctn").on("init", function(e, slick){
@@ -207,7 +255,7 @@ $(function(){
 			isPause,
 			tick;
 
-		/*************************************************************** get 2 ***************************************************************/
+	// 메인 슬라이더 *****************************************************************************************************************************************************************
 		
 		$bar = $('.slider-progress .progress');
 		function startProgressbar() {
@@ -219,7 +267,7 @@ $(function(){
 
 		function interval() {
 			if (isPause === false) {
-				percentTime += .2 / (time + 0.1);
+				percentTime += .7 / (time + 0.1);
 				$bar.css({
 					width: percentTime + "%"
 				});
@@ -232,14 +280,15 @@ $(function(){
 
 		function resetProgressbar() {
 			$bar.css({
-			width: 0 + '%'
+				width: 0 + '%'
 			});
 			clearTimeout(tick);
+			
 		}
 
-		startProgressbar();
 		
-		$('.next, .prev').click(function() {
+		
+		$('.next, .prev, .dot').click(function() {
 			startProgressbar();
 		});
 		
@@ -282,14 +331,14 @@ $(function(){
 
 	$(".m-pro3 .slide_ctn").on("init", function(e, slick){
 		var count = slick.slideCount;
-		$(".num_box .all").text("0"+count)
+		$(".num_box .all").text("0"+count);
 	}).slick({
 		arrows:false,
 		speed: 200,
 		pauseOnHover:false,
 		pauseOnFocus:false,
 		autoplay:true,
-		autoplaySpeed:3000,
+		autoplaySpeed:5000,
 		fade:true,
 		dotsClass:"dot",
 	}).on("beforeChange", function (e, slick, currentSlide, nextSlide) {
@@ -310,7 +359,7 @@ $(function(){
 		$(".num_box .current").text("0" + (idx + 1))
 		$(".m-pro3 .slide_ctn").slick("setPosition");
 		$(".m-pro3 .slide_ctn").slick("slickGoTo", idx)
-		$(".m-pro3 .slide_ctn").slick("slickPause");
+		// $(".m-pro3 .slide_ctn").slick("slickPause");
 	})
 	$('.m-pro3 .bg_blue > div').hover(function() {
 		$(this).addClass('on');
@@ -335,8 +384,8 @@ $(function(){
 	$('.community .vertical_slider').slick({
 		slidesToShow: 2,
 		slidesToScroll: 1,
-		autoplay: true,
-		autoplaySpeed: 5000,
+		autoplay: false,
+		autoplaySpeed: 3000,
 		infinite: false,
 		cssEase: 'ease-out',
 		arrows: false,
@@ -386,6 +435,31 @@ $(function(){
           clickable: true,
         },
       });
+
+	// $('.mySwiper2 .swiper-slide').on('mouseover', function() {
+	// 	swiper2.slideTo($(this).index());
+	// })
+	 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

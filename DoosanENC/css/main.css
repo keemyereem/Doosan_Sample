@@ -208,9 +208,12 @@ figure{margin: 0;}
 .section3 .bot_cont02 ul {width: 100%; display: flex;justify-content: center;}
 .section3 .bot_cont02 ul li {width: calc(33.33% - 26px);max-width: 379px;}
 .section3 .bot_cont02 ul li:not(:last-child) {margin-right: 40px;}
-.section3 .bot_cont02 ul li .img img {object-fit: contain;}
+.section3 .bot_cont02 ul li .img {overflow: hidden;transition: all .5s;}
+.section3 .bot_cont02 ul li .img img {object-fit: contain;transition: all .5s;}
 .section3 .bot_cont02 ul .desc .tit {font-size: 20px;font-weight: 400;color: #222;margin: 25px 0 20px;}
-.section3 .bot_cont02 ul .desc .sub_txt {font-size: 16px;color: #888;}
+.section3 .bot_cont02 ul .desc .sub_txt {font-size: 16px;color: #888;font-weight: 200;}
+.section3 .bot_cont02 ul li:hover .img {border-radius: 20px;}
+.section3 .bot_cont02 ul li:hover .img img {transform: scale(1.1);}
 
 /************************************************************************************************************************************************************************************************/
 
@@ -233,7 +236,7 @@ figure{margin: 0;}
 .m_val .cont li .cont_box .center {display: table-cell;vertical-align: middle;transition: all .6s;}
 .m_val .cont li .icon {transition: all .3s; position: absolute;top: 125px;left: 50%;transform: translateX(-50%);} 
 .m_val .cont li .name {transition: all .3s; font-size: 30px;font-weight: 400;/* padding: 44px 0 25px; */position: absolute;top: 220px;left: 50%;transform: translateX(-50%);}
-.m_val .cont li .sub_txt {transition: all .4s; font-size: 20px;font-weight: 100;opacity: 0;position: absolute;top: 190px;left: 50%;transform: translateX(-50%);}
+.m_val .cont li .sub_txt {transition: all .4s;font-family: 'NS'; font-size: 18px;font-weight: 100;opacity: 0;position: absolute;top: 190px;left: 50%;transform: translateX(-50%);}
 .m_val .cont li a {transition: all .4s; /* margin-top: 40px; */position: absolute;top: 400px;left: 50%;transform: translateX(-50%);display: none;}
 .m_val .cont li a > img {transition: all .3s;}
 .m_val .cont li:hover,.m_val .cont li.on {width: 600px;}
@@ -396,7 +399,7 @@ figure{margin: 0;}
 .section6 .slider_container .slider_wrap {width: 1230px;height: auto;position: absolute; left: 50%;margin-left: -67px; top: 13%;}
 .section6 .slider_container .slider_wrap .item {position: relative;}
 .section6 .slider_container .slider_wrap .item .img {position: relative;cursor: pointer;overflow: hidden;}
-.section6 .slider_container .slider_wrap .item:hover .img {border-radius: 20px;}
+.section6 .slider_container .slider_wrap .item:hover .img {border-radius: 20px;transition: all .8s;}
 .section6 .slider_container .slider_wrap .item .img .bg {}
 .section6 .slider_container .slider_wrap .item .img .bg > img {width: 100%;transition: all .8s;}
 .section6 .slider_container .slider_wrap .item:hover .bg > img {transform: scale(1.1);}
@@ -410,17 +413,14 @@ figure{margin: 0;}
 .section6 .slider_container .slider_wrap .item02 {margin-top: 200px!important;}
 .section6 .slider_container .slider_wrap .item03 {margin-top: 140px!important;}
 .section6 .slider_container .slider_wrap .item04 {margin-top: 200px!important;}
-.section6 .slider_container .slider_wrap .item .txt {position: absolute;left: -20px;opacity: 0;transition: all .5s;}
-.section6 .slider_container .slider_wrap .item01 .txt {bottom: 0;}
-.section6 .slider_container .slider_wrap .item02 .txt {top: 0;}
-.section6 .slider_container .slider_wrap .item03 .txt {bottom: 0;}
-.section6 .slider_container .slider_wrap .item04 .txt {top: 0;}
+.section6 .slider_container .slider_wrap .item .txt {position: absolute;left: -20px;transition: all .5s;}
+.section6 .slider_container .slider_wrap .item01 .txt {bottom: -60px;}
+.section6 .slider_container .slider_wrap .item02 .txt {top: -60px;}
+.section6 .slider_container .slider_wrap .item03 .txt {bottom: -60px;}
+.section6 .slider_container .slider_wrap .item04 .txt {top: -60px;}
 .section6 .slider_container .slider_wrap .slick-slide {margin: 0 30px;} 
 .section6 .slider_container .slider_wrap .slick-list {margin: 0 -30px;height: auto;}
-.section6 .slider_container .slider_wrap .item01:hover .txt {opacity: 1;bottom: -60px;}
-.section6 .slider_container .slider_wrap .item02:hover .txt {opacity: 1;top: -60px;}
-.section6 .slider_container .slider_wrap .item03:hover .txt {opacity: 1;bottom: -60px;}
-.section6 .slider_container .slider_wrap .item04:hover .txt {opacity: 1;top: -60px;}
+
 
 
 

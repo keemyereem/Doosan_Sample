@@ -448,9 +448,9 @@ $(function(){
 	s6Progress(0);
 	  
 /* --------------------------------------------- 기업 sub ----------------------------------------------------- */
-	setTimeout(function () {
-		$('.sub_visual').addClass('a_on');
-	}, 1);
+	// setTimeout(function () {
+	// 	$('.sub_visual').addClass('a_on');
+	// }, 1);
 
 
 	var controller = new ScrollMagic.Controller();
@@ -536,9 +536,9 @@ $(function(){
 
 // 	};
 
-// 	setTimeout(function () {
-// 		$('.sub_visual').addClass('a_on');
-// 	}, 1);
+	// setTimeout(function () {
+	// 	$('.sub_visual').addClass('a_on');
+	// }, 1);
 
 // 	$(window).on("scroll", function(){
 // 		scrollDetect();

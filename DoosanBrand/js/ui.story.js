@@ -2,21 +2,20 @@
 function check_hanlder() {
   if ($('.sec-ani').hasClass('active')) {
     $('.square').removeClass('on left');
-    $('.letter_container').removeClass('shuffle');
+    $('.letter').removeClass('on');
+    // $('.letter_container').removeClass('fadeOut');
+
   } else {
     $('.square').addClass('on');
+
     const animated = document.querySelector('.square.on');
       animated.addEventListener('animationend', () => {
         $('.square.on').addClass('left');
-        $('.letter_container').addClass('shuffle');
-
-        $('.letter_container').on('animationiteration webkitAnimationIteration', function () {
-          var $this = $(this);
+        setTimeout(() => {
+          $('.letter').addClass('on');
+        }, 100);
+        // $('.letter_container').addClass('stop');
         
-          $this.removeClass('shuffle');
-        
-          $this.off();
-        });
 
       });
   }
@@ -166,19 +165,20 @@ $(document).ready(function(){
 		slidesToShow: 2,
 		slidesToScroll: 1,
 		autoplay: true,
-		autoplaySpeed: 5000,
-		infinite: true,
+		autoplaySpeed: 3000,
+		infinite: false,
 		cssEase: 'ease-out',
 		arrows: false,
-	}).on('wheel', function(e) {
-		e.stopPropagation();
-		e.preventDefault();
-		
-		if (e.originalEvent.deltaY < 0) {
-			$(this).slick('slickPrev');
-		} else {
-			$(this).slick('slickNext');
-		}
+	});
+  
+  $('.sub .sec-6 .s6_tab li').click(function(){
+		var idx = $('.sub .sec-6 .s6_tab li').index(this)+1;
+		console.log(idx);
+		$('.sub .sec-6 .s6_tab li').removeClass('on');
+		$(this).addClass('on');
+		$('.sub .sec-6 .right > div').removeClass('on');
+		$('.sub .sec-6 .right > .item0' + idx).addClass('on');
+
 	});
 
 
@@ -191,7 +191,17 @@ $(document).ready(function(){
       $(this).addClass('a_on');
     }
 
-    
+    var s5 = $('.story-cont .sec-5');
+
+    // $(window).scroll(function(e){
+    //     if(s5.offset().top !== 0){
+    //         if(!s5.hasClass('shadow')){
+    //             $('.header').addClass('shadow');
+    //         }
+    //     }else{
+    //       $('.header').removeClass('shadow');
+    //     }
+    // });
 
 });
 

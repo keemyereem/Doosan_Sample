@@ -1,4 +1,5 @@
-.sec-ani {border: 1px solid orange;/* width: 100%;height: 100%; */}
+.sec-ani:after {width: 100%;height: 100%;background: #eee;}
+.sec-ani .we {width: 50%;text-align: right;margin-left: 35px;}
 .sec-ani .letter {border: 1px solid;}
 
 .sec-ani .letter div { font-family: 'Raleway'; font-size: 148px; top: 0; bottom:0; position: absolute; left: 50%; right: 0;margin-left: 60px;}
@@ -17,11 +18,6 @@
 .sec-ani.active .letter .last p { opacity: 0; animation-name: lastTitleAnimation; animation-timing-function: ease; animation-delay: 26s; -webkit-animation-fill-mode: forwards; animation-duration: 3s;  }
 .sec-ani.active .letter .last.off p { opacity: 1; }
 
-
-
-.sec-ani.active .square { animation-delay: 2s; animation-name: square; animation-timing-function: ease; animation-duration: 1s; width:100%; height:100%; background:#014099; position: absolute; top:0; left:0; right:0; bottom:0; margin:auto; }
-.sec-ani.active .square.on { width: 371px; height: 357px; transform: rotate(15deg); animation-delay: 1s; animation-name: left; animation-timing-function: ease; animation-duration: 1s; }
-.sec-ani.active .square.on.left { width: 371px; height: 357px; transform: rotate(15deg) translate(-35%, 15%); }
 @keyframes titleAnimation {
     0% {
         transform: translateY(-50px);
@@ -96,6 +92,9 @@
 }
 
 
+.sec-ani .square, .sec-ani.active .square { width:100%; height:100%; background:#014099; position: absolute; top:0; left:0; right:0; bottom:0; margin:auto; }
+.sec-ani.active .square.on { animation-delay: 1s; animation-name: square; animation-timing-function: ease; animation-duration: 2s; }
+.sec-ani.active .square.on.left { width: 371px; height: 357px; transform: rotate(15deg) translate(-32%, 10%); }
 
 @keyframes square {
     0% {
@@ -103,32 +102,43 @@
         height:100%;
         transform: rotate(0deg);
     }
+    20% {
+        width: 371px;
+        height:357px;
+        transform: rotate(0deg) translateY(3%);
+    }
+    40% {
+        width: 371px;
+        height:357px;
+        transform: rotate(0deg) translateY(3%);
+    }
+    60% {
+        width: 371px;
+        height:357px;
+        transform: rotate(15deg) translateY(3%);
+    }
+    80% {
+        width: 371px;
+        height:357px;
+        transform: rotate(15deg) translateY(3%);
+    }
     100% {
         width: 371px;
         height:357px;
-        transform: rotate(15deg);
-    }
-}
-@keyframes left {
-    0% {
-        transform:rotate(15deg) translateX(0);
-    }
-    100% {
-        transform:rotate(15deg) translate(-35%, 15%);
+        transform: rotate(15deg) translate(-32%, 10%);
     }
 }
 
-.sec-ani .we {width: 50%;border: 1px solid #f00;text-align: right;float: left;}
+
+.sec-ani .we {width: 50%;text-align: right;float: left;}
 .sec-ani .letter_container {
-    position: relative;margin: 0;padding: 0;height: 144px;width: 100%; border: 1px solid #000;overflow: hidden;width: 50%;float: right;padding-left: 62px;
+    position: relative;margin: 0;padding: 0;height: 144px;width: 100%;overflow: hidden;width: calc(50% - 62px);float: right;
 }
-.sec-ani .letter_container span {font-family: 'Raleway';font-size: 160px;line-height: 100%; color: lightblue;display: flex;width: 100%;height: 100%;display: grid; align-items: center;text-align: left;}
-.sec-ani .letter_container.shuffle span {animation: shuffle steps(7) .4s infinite;}
+.sec-ani .letter_container span {font-family: 'Raleway';font-size: 160px;line-height: 100%; color: rgb(255, 207, 207);display: flex;width: 100%;height: 100%;display: grid; align-items: center;text-align: left;}
+.sec-ani .letter_container.shuffle span {animation: shuffle steps(56) .8s forwards;}
 @keyframes shuffle {
     0% {transform: translateY(0);}
     100% {transform: translateY(-1008px);}
 }
 
-.sec-ani .cont {border: 1px solid green;display: flex}
-
-
+.sec-ani .cont {display: flex}
