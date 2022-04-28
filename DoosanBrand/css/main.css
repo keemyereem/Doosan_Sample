@@ -4,7 +4,8 @@
 .w1446{width: 100%; max-width:1446px; margin-left: auto;margin-right: auto;box-sizing:border-box;}
 .wrap{overflow: hidden;}
 
-.mv{position: relative; }
+
+.mv{position: relative; opacity: 0; transition: opacity 1s;}
 .mv .scroll{position:absolute; bottom: 125px; left: 0; z-index: 100; transform:translateX(calc(100% - 80px))}
 .mv .scroll::after{content:''; background: #9d9781; width: 5px; height: 5px; border-radius: 50px; position:absolute; bottom: -21px; left: calc(50% + 1px); transform:translateX(-50%); animation:scroll 1.5s infinite}
 .mv .scroll::before { content:''; position: absolute; bottom: -61px; background-color: #fff; width: 11px; height: 40px; left: calc(50% + -4.5px); border-radius: 5.5px; }

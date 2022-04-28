@@ -77,6 +77,12 @@
 			if (searchform.s_keyword.value=='') { alert("검색어를 입력하세요."); searchform.s_keyword.focus(); return false; }
 			searchform.submit();
 		}
+
+		$(document).ready(function () {
+			setTimeout( function() {
+				$('.mv').css('opacity', '1');
+			}, 500)
+		});
 	</script>
 	<header class="header">
 		<div class="header_wrap">
@@ -154,7 +160,7 @@
 								<video id="video01" autoplay playsinline muted data-keepplaying>
 									<source src="video/main_video01.mp4" type="video/mp4">
 								</video>
-								<img src="img/brand_bg1.png" alt="brand_bg1">
+								<!-- <img src="img/brand_bg1.png" alt="brand_bg1"> -->
 							</div>
 						</div>
 						<div class="item">

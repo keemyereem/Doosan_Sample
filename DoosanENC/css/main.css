@@ -24,7 +24,11 @@ figure{margin: 0;}
 .mv .slide_wrap .slide_ctn .item .bg04{background:url(/img/main/mv03.jpg) 50% 50% no-repeat; background-size:cover}
 .mv .slide_wrap .slide_ctn .item.slick-active .bg img {animation: visScale 8s 1.3s both;}
 .mv .slide_wrap .slide_txt{position:absolute; width: 100%; top: 50%; left: 0; transform:translateY(-50%); box-sizing:border-box;}
-.mv .slide_wrap .slide_txt .item a{display:inline-block; vertical-align: middle; font-weight:400; font-size:13px; letter-spacing:.5px; color: #fff; width: 200px; height: 50px; border:1px solid #fff; box-sizing:border-box; text-align: center; line-height: 50px; margin-top: 84px;}
+.mv .slide_wrap .slide_txt .item a{display:inline-block; vertical-align: middle; font-weight:400; font-size:13px; letter-spacing:.5px; color: #fff; width: 200px; height: 50px; border:1px solid #fff; box-sizing:border-box; text-align: center; line-height: 50px; margin-top: 84px;position: relative;}
+.mv .slide_wrap .slide_txt .item a:before {content: "";display: block;position: absolute;left: 0;top: 0;bottom: 0;right: 0;transform: scaleX(0);z-index: -1;background-color: #fff;transition:all .2s ease-out;transform-origin:0 50%}
+.mv .slide_wrap .slide_txt .item a:hover{color: #222;}
+.mv .slide_wrap .slide_txt .item a:hover:before{transform:scaleX(1)}
+
 .mv .slide_wrap .slide_txt .item p{position:relative; box-sizing:border-box; font-family: 'Pretendard'; font-weight:500; font-size:16px; letter-spacing:-0.025em; color: #fff; margin-top: 38px;}
 .mv .slide_wrap .slide_txt .item h2{font-weight:300; font-size:57px; letter-spacing:-0.025em; color: #fff; line-height:1.4; overflow: hidden; text-shadow: 3px 4px 10px rgba(0, 0, 0, 0.38);}
 .mv .slide_wrap .slide_txt .item h2 span{display:inline-block; }

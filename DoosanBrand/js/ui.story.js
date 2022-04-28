@@ -164,7 +164,7 @@ $(document).ready(function(){
   $('.story-cont .sec-5 .slider_wrap').slick({
 		slidesToShow: 2,
 		slidesToScroll: 1,
-		autoplay: true,
+		autoplay: false,
 		autoplaySpeed: 3000,
 		infinite: false,
 		cssEase: 'ease-out',
