@@ -196,13 +196,13 @@ $(function(){
 		var video = videoChk.find("video")[0]
 		if(!$(this).hasClass("on")){
 			$(this).addClass("on")
-			$(this).children().next().html("<i class='xi-pause'></i>")
+			$(this).children().next().html("<i class='xi-play'></i>")
 			mvSlide.slick("slickPause");
 			video.pause();
 			$(".play .p_bar").stop().animate()
 		} else{
 			$(this).removeClass("on")
-			$(this).children().next().html("<i class='xi-play'></i>")
+			$(this).children().next().html("<i class='xi-pause'></i>")
 			mvSlide.slick("slickPlay");
 			video.play();
 			play_bar(autoplaySpeed)

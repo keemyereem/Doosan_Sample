@@ -35,8 +35,8 @@ figure{margin: 0;}
 .mv .slide_wrap .slide_ui{position:absolute; bottom: 100px; left: 0; width: 100%; /* max-width:1400px; margin: 0 auto;  */box-sizing:border-box;/*  transform:translateX(-50%); */}
 .mv .slide_wrap .slide_ui .left_box{display:inline-block; width: calc(100% - 257px); vertical-align: middle;}
 .mv .slide_wrap .slide_ui .left_box .play{display:inline-block; vertical-align: top; position:relative; width: 46px; height: 46px; cursor: pointer;}
-.mv .slide_wrap .slide_ui .left_box .play .icon{position:absolute; top: 55%; left: 54%; transform:translate(-50%,-50%); color: #fff; font-size:32px;}
-.mv .slide_wrap .slide_ui .left_box .play.on .icon{position:absolute; top: 55%; left: 50%; transform:translate(-50%,-50%); color: #fff; font-size:32px;}
+.mv .slide_wrap .slide_ui .left_box .play .icon{position:absolute; top: 55%; left: 50%; transform:translate(-50%,-50%); color: #fff; font-size:32px;}
+.mv .slide_wrap .slide_ui .left_box .play.on .icon{position:absolute; top: 55%; left: 52%; transform:translate(-50%,-50%); color: #fff; font-size:32px;}
 .mv .slide_wrap .slide_ui .left_box .num{position: relative;top:4px;display:inline-block; vertical-align: top; margin-left: 24px;}
 .mv .slide_wrap .slide_ui .left_box .num p{display:inline-block; vertical-align: bottom; font-family: 'Montserrat', sans-serif; font-weight:bold; font-size:24px; color: #fff;}
 .mv .slide_wrap .slide_ui .left_box .num .current{position:relative; top: 4px;}

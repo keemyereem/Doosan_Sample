@@ -301,8 +301,8 @@ body.down .story-cont.active .sec-2.active .inner::before { -webkit-transition-d
 .story-cont .sec:not(.active) .cont .s_txt:after {width: 93px;transition: width .8s 1.5s;}
 .story-cont .sec-2.active .cont .s_txt:after {animation: tagWidth .8s 1.5s both;}
 
-.story-cont .sec-5.active .cont .s_tit {animation: storyFadeRightIn2 .8s 1.2s both;}
-.story-cont .sec-5.active .cont .slider_wrap {animation: storyFadeLeftIn2 .8s 1.2s both;}
+.story-cont .sec-5.active .cont .s_tit {animation: storyFadeRightIn2 .8s .8s both;}
+.story-cont .sec-5.active .cont .slider_wrap {animation: storyFadeLeftIn2 .8s .8s both;}
 .story-cont .sec-5:not(.active) .cont .s_tit {animation: storyFadeLeftOut2 .3s both;}
 .story-cont .sec-5:not(.active) .cont .slider_wrap {animation: storyFadeRightOut2 .3s both;}
 .story-cont .sec-6.active .inner .cont .left .s_tit {animation: storyFadeRightIn2 .8s .3s both;}

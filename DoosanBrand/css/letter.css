@@ -14,8 +14,8 @@
 .sec-ani.active .letter.on .title:nth-of-type(3) p { animation-delay: 5s; -webkit-animation-fill-mode: forwards; }
 .sec-ani.active .letter.on .title:nth-of-type(4) p { animation-delay: 7.5s; -webkit-animation-fill-mode: forwards; }
 .sec-ani.active .letter.on .title:nth-of-type(5) p { animation-delay: 10s; -webkit-animation-fill-mode: forwards; }
-.sec-ani.active .letter.on .title:nth-of-type(6) p { animation-delay: 12.5s; -webkit-animation-fill-mode: forwards; }
-.sec-ani.active .letter.on .last p { opacity: 0; animation-name: lastTitleAnimation; animation-timing-function: ease; animation-delay: 15s; -webkit-animation-fill-mode: forwards; animation-duration: 3s;  }
+/* .sec-ani.active .letter.on .title:nth-of-type(6) p { animation-delay: 12.5s; -webkit-animation-fill-mode: forwards; } */
+.sec-ani.active .letter.on .last p { opacity: 0; animation-name: lastTitleAnimation; animation-timing-function: ease; animation-delay: 12.5s; -webkit-animation-fill-mode: forwards; animation-duration: 3s;  }
 .sec-ani.active .letter.on .last.off p { opacity: 1; }
 
 @keyframes titleAnimation {
@@ -131,7 +131,7 @@
 }
 
 
-.sec-ani .we {width: 50%;text-align: right;float: left;margin-left: 30px;}
+.sec-ani .we {width: 50%;text-align: right;float: left;margin-left:10px;}
 .sec-ani .letter_container {
     position: relative;padding: 0;height: 144px;width: 100%;overflow: hidden;width: calc(50% - 62px);float: right;padding-left: 30px;
 }

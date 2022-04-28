@@ -320,7 +320,7 @@ $(function(){
 		$(this).addClass("on");
 		
 		//$(".num_box .current").text("0" + (idx + 1))
-		$('.m_pro').css('background', 'url(img/sec2_bg' + (idx + 1) + '.png) no-repeat');
+		$('.m_pro').css({'background': 'url(img/sec2_bg' + (idx + 1) + '.png) no-repeat', 'background-size': 'cover'});
 		$(".m_pro .slide_ctn").slick("setPosition");
 		$(".m_pro .slide_ctn").slick("slickGoTo", idx)
 		// $(".m_pro .slide_ctn").slick("slickPause");
@@ -386,7 +386,7 @@ $(function(){
 		slidesToScroll: 1,
 		autoplay: false,
 		autoplaySpeed: 3000,
-		infinite: false,
+		infinite: true,
 		cssEase: 'ease-out',
 		arrows: false,
 		vertical : true,
